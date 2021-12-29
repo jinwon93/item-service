@@ -1,7 +1,7 @@
 package hello.itemservice.web.basic;
 
 
-import hello.itemservice.domain.Item;
+import hello.itemservice.domain.item.Item;
 import hello.itemservice.domain.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ public class BasicItemConroller {
     private final ItemRepository itemRepository;
 
     @GetMapping
-    public String itesm(Model model){
+    public String items(Model model){
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items" , items);
         return  "basic/items";
